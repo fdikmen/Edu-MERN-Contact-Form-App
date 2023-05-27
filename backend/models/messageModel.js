@@ -6,7 +6,8 @@ const messageSchema = new Schema({
     email:  String,
     message: { type: String, required: true },
     subject: { type: String, required: true },
-    timestamp: { type: Date, default: Date.now }
+    timestamp: { type: Date, default: Date.now },
+    isAccepted: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Message', messageSchema);

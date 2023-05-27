@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 require('dotenv').config(); // Import dotenv and run the config() method
+var cors = require('cors')
 
 const mongoose=require('mongoose');
 
@@ -18,6 +19,9 @@ var usersRouter = require('./routes/users');
 var messageRouter = require('./routes/messageRoutes'); //Import routes for "message" area of site
 
 var app = express();
+//Allow CORS
+app.use(cors())
+// app.use(cors({origin: 'http://localhost:3000'}))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
